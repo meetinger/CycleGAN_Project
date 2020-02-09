@@ -122,11 +122,11 @@ class LossLogger():
             plt.title(lossName)
             plt.xlabel("Epoch")
             plt.ylabel("Loss")
-            plt.savefig('output/plots/' + lossName + '.png')
+            plt.savefig('minecraftday2night/plots/' + lossName + '.png')
 
     def save(self):
         df = pd.DataFrame.from_dict(self.losses)
-        df.to_csv("output/plots/losses.csv")
+        df.to_csv("minecraftday2night/plots/losses.csv")
 
 
 def initWeights(m):

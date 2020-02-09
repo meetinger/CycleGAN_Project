@@ -104,12 +104,12 @@ def train(epochs=100, batch=1, dataset="datasets/horse2zebra", lr=0.0002, decrea
 
     logger = LossLogger(epochs, len(dataset))
 
-    if not os.path.exists('output/weights'):
-        os.makedirs('output/weights')
-    if not os.path.exists('output/weights'):
-        os.makedirs('output/weights')
-    if not os.path.exists('output/plots'):
-        os.makedirs('output/plots')
+    if not os.path.exists('minecraftday2night/weights'):
+        os.makedirs('minecraftday2night/weights')
+    if not os.path.exists('minecraftday2night/weights'):
+        os.makedirs('minecraftday2night/weights')
+    if not os.path.exists('minecraftday2night/plots'):
+        os.makedirs('minecraftday2night/plots')
 
     for epoch in range(1, epochs + 1):
         for i, batch in enumerate(dataset):
@@ -173,15 +173,15 @@ def train(epochs=100, batch=1, dataset="datasets/horse2zebra", lr=0.0002, decrea
 
         if epoch % chechpntDelay == 0:
             label = '_ep' + str(epoch)
-            torch.save(XtoY.state_dict(), 'output/weights/netXtoY' + label + '.pth')
-            torch.save(YtoX.state_dict(), 'output/weights/netYtoX' + label + '.pth')
-            torch.save(D_x.state_dict(), 'output/weights/netD_x' + label + '.pth')
-            torch.save(D_y.state_dict(), 'output/weights/netD_y' + label + '.pth')
+            torch.save(XtoY.state_dict(), 'minecraftday2night/weights/netXtoY' + label + '.pth')
+            torch.save(YtoX.state_dict(), 'minecraftday2night/weights/netYtoX' + label + '.pth')
+            torch.save(D_x.state_dict(), 'minecraftday2night/weights/netD_x' + label + '.pth')
+            torch.save(D_y.state_dict(), 'minecraftday2night/weights/netD_y' + label + '.pth')
 
-        torch.save(XtoY.state_dict(), 'output/weights/netXtoY.pth')
-        torch.save(YtoX.state_dict(), 'output/weights/netYtoX.pth')
-        torch.save(D_x.state_dict(), 'output/weights/netD_x.pth')
-        torch.save(D_y.state_dict(), 'output/weights/netD_y.pth')
+        torch.save(XtoY.state_dict(), 'minecraftday2night/weights/netXtoY.pth')
+        torch.save(YtoX.state_dict(), 'minecraftday2night/weights/netYtoX.pth')
+        torch.save(D_x.state_dict(), 'minecraftday2night/weights/netD_x.pth')
+        torch.save(D_y.state_dict(), 'minecraftday2night/weights/netD_y.pth')
 
         logger.save()
 
