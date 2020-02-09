@@ -66,8 +66,8 @@ class CycleGan(QtWidgets.QMainWindow, gui.Ui_MainWindow):
         msg.exec_()
 
     def updateVars(self):
-        self.imsizeTrain = self.sizetrainslider.value()
-        self.imsizeGen = self.sizegenslider.value()
+        self.imsizeTrain = (self.sizetrainslider.value()//32)*32
+        self.imsizeGen = (self.sizegenslider.value()//32)*32
         self.lr = self.lrslider.value()/1000
         self.epochs = self.epochsslider.value()
         print(self.imsizeTrain, self.imsizeGen, self.lr, self.epochs)

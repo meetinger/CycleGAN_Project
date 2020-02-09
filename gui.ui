@@ -156,6 +156,9 @@
           <property name="singleStep">
            <number>32</number>
           </property>
+          <property name="pageStep">
+           <number>32</number>
+          </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
